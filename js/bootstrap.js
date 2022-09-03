@@ -15,7 +15,6 @@ if ("undefined" == typeof jQuery)
 })(jQuery),
   +(function (a) {
     "use strict";
-
     function b() {
       var a = document.createElement("bootstrap"),
         b = {
@@ -24,11 +23,7 @@ if ("undefined" == typeof jQuery)
           OTransition: "oTransitionEnd otransitionend",
           transition: "transitionend",
         };
-      for (var c in b)
-        if (void 0 !== a.style[c])
-          return {
-            end: b[c],
-          };
+      for (var c in b) if (void 0 !== a.style[c]) return { end: b[c] };
       return !1;
     }
     (a.fn.emulateTransitionEnd = function (b) {
@@ -58,7 +53,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b) {
       return this.each(function () {
         var c = a(this),
@@ -102,7 +96,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b) {
       return this.each(function () {
         var d = a(this),
@@ -118,9 +111,7 @@ if ("undefined" == typeof jQuery)
         (this.isLoading = !1);
     };
     (c.VERSION = "3.3.5"),
-      (c.DEFAULTS = {
-        loadingText: "loading...",
-      }),
+      (c.DEFAULTS = { loadingText: "loading..." }),
       (c.prototype.setState = function (b) {
         var c = "disabled",
           d = this.$element,
@@ -189,7 +180,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b) {
       return this.each(function () {
         var d = a(this),
@@ -223,12 +213,7 @@ if ("undefined" == typeof jQuery)
     };
     (c.VERSION = "3.3.5"),
       (c.TRANSITION_DURATION = 600),
-      (c.DEFAULTS = {
-        interval: 5e3,
-        pause: "hover",
-        wrap: !0,
-        keyboard: !0,
-      }),
+      (c.DEFAULTS = { interval: 5e3, pause: "hover", wrap: !0, keyboard: !0 }),
       (c.prototype.keydown = function (a) {
         if (!/input|textarea/i.test(a.target.tagName)) {
           switch (a.which) {
@@ -312,10 +297,7 @@ if ("undefined" == typeof jQuery)
           i = this;
         if (f.hasClass("active")) return (this.sliding = !1);
         var j = f[0],
-          k = a.Event("slide.bs.carousel", {
-            relatedTarget: j,
-            direction: h,
-          });
+          k = a.Event("slide.bs.carousel", { relatedTarget: j, direction: h });
         if ((this.$element.trigger(k), !k.isDefaultPrevented())) {
           if (
             ((this.sliding = !0), g && this.pause(), this.$indicators.length)
@@ -387,7 +369,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b) {
       var c,
         d =
@@ -395,7 +376,6 @@ if ("undefined" == typeof jQuery)
           ((c = b.attr("href")) && c.replace(/.*(?=#[^\s]+$)/, ""));
       return a(d);
     }
-
     function c(b) {
       return this.each(function () {
         var c = a(this),
@@ -424,9 +404,7 @@ if ("undefined" == typeof jQuery)
     };
     (d.VERSION = "3.3.5"),
       (d.TRANSITION_DURATION = 350),
-      (d.DEFAULTS = {
-        toggle: !0,
-      }),
+      (d.DEFAULTS = { toggle: !0 }),
       (d.prototype.dimension = function () {
         var a = this.$element.hasClass("width");
         return a ? "width" : "height";
@@ -548,7 +526,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b) {
       var c = b.attr("data-target");
       c ||
@@ -557,16 +534,13 @@ if ("undefined" == typeof jQuery)
       var d = c && a(c);
       return d && d.length ? d : b.parent();
     }
-
     function c(c) {
       (c && 3 === c.which) ||
         (a(e).remove(),
         a(f).each(function () {
           var d = a(this),
             e = b(d),
-            f = {
-              relatedTarget: this,
-            };
+            f = { relatedTarget: this };
           e.hasClass("open") &&
             ((c &&
               "click" == c.type &&
@@ -578,7 +552,6 @@ if ("undefined" == typeof jQuery)
                 e.removeClass("open").trigger("hidden.bs.dropdown", f))));
         }));
     }
-
     function d(b) {
       return this.each(function () {
         var c = a(this),
@@ -605,9 +578,7 @@ if ("undefined" == typeof jQuery)
                 .addClass("dropdown-backdrop")
                 .insertAfter(a(this))
                 .on("click", c);
-            var h = {
-              relatedTarget: this,
-            };
+            var h = { relatedTarget: this };
             if (
               (f.trigger((d = a.Event("show.bs.dropdown", h))),
               d.isDefaultPrevented())
@@ -669,7 +640,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b, d) {
       return this.each(function () {
         var e = a(this),
@@ -700,19 +670,13 @@ if ("undefined" == typeof jQuery)
     (c.VERSION = "3.3.5"),
       (c.TRANSITION_DURATION = 300),
       (c.BACKDROP_TRANSITION_DURATION = 150),
-      (c.DEFAULTS = {
-        backdrop: !0,
-        keyboard: !0,
-        show: !0,
-      }),
+      (c.DEFAULTS = { backdrop: !0, keyboard: !0, show: !0 }),
       (c.prototype.toggle = function (a) {
         return this.isShown ? this.hide() : this.show(a);
       }),
       (c.prototype.show = function (b) {
         var d = this,
-          e = a.Event("show.bs.modal", {
-            relatedTarget: b,
-          });
+          e = a.Event("show.bs.modal", { relatedTarget: b });
         this.$element.trigger(e),
           this.isShown ||
             e.isDefaultPrevented() ||
@@ -740,9 +704,7 @@ if ("undefined" == typeof jQuery)
                 e && d.$element[0].offsetWidth,
                 d.$element.addClass("in"),
                 d.enforceFocus();
-              var f = a.Event("shown.bs.modal", {
-                relatedTarget: b,
-              });
+              var f = a.Event("shown.bs.modal", { relatedTarget: b });
               e
                 ? d.$dialog
                     .one("bsTransitionEnd", function () {
@@ -869,10 +831,7 @@ if ("undefined" == typeof jQuery)
         });
       }),
       (c.prototype.resetAdjustments = function () {
-        this.$element.css({
-          paddingLeft: "",
-          paddingRight: "",
-        });
+        this.$element.css({ paddingLeft: "", paddingRight: "" });
       }),
       (c.prototype.checkScrollbar = function () {
         var a = window.innerWidth;
@@ -915,13 +874,7 @@ if ("undefined" == typeof jQuery)
             ),
             g = f.data("bs.modal")
               ? "toggle"
-              : a.extend(
-                  {
-                    remote: !/#/.test(e) && e,
-                  },
-                  f.data(),
-                  d.data()
-                );
+              : a.extend({ remote: !/#/.test(e) && e }, f.data(), d.data());
           d.is("a") && c.preventDefault(),
             f.one("show.bs.modal", function (a) {
               a.isDefaultPrevented() ||
@@ -935,7 +888,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b) {
       return this.each(function () {
         var d = a(this),
@@ -969,10 +921,7 @@ if ("undefined" == typeof jQuery)
         delay: 0,
         html: !1,
         container: !1,
-        viewport: {
-          selector: "body",
-          padding: 0,
-        },
+        viewport: { selector: "body", padding: 0 },
       }),
       (c.prototype.init = function (b, c, d) {
         if (
@@ -987,11 +936,7 @@ if ("undefined" == typeof jQuery)
                 ? this.options.viewport.call(this, this.$element)
                 : this.options.viewport.selector || this.options.viewport
             )),
-          (this.inState = {
-            click: !1,
-            hover: !1,
-            focus: !1,
-          }),
+          (this.inState = { click: !1, hover: !1, focus: !1 }),
           this.$element[0] instanceof document.constructor &&
             !this.options.selector)
         )
@@ -1038,10 +983,7 @@ if ("undefined" == typeof jQuery)
           (b = a.extend({}, this.getDefaults(), this.$element.data(), b)),
           b.delay &&
             "number" == typeof b.delay &&
-            (b.delay = {
-              show: b.delay,
-              hide: b.delay,
-            }),
+            (b.delay = { show: b.delay, hide: b.delay }),
           b
         );
       }),
@@ -1135,11 +1077,7 @@ if ("undefined" == typeof jQuery)
           j && (h = h.replace(i, "") || "top"),
             f
               .detach()
-              .css({
-                top: 0,
-                left: 0,
-                display: "block",
-              })
+              .css({ top: 0, left: 0, display: "block" })
               .addClass(h)
               .data("bs." + this.type, this),
             this.options.container
@@ -1194,10 +1132,7 @@ if ("undefined" == typeof jQuery)
             a.extend(
               {
                 using: function (a) {
-                  d.css({
-                    top: Math.round(a.top),
-                    left: Math.round(a.left),
-                  });
+                  d.css({ top: Math.round(a.top), left: Math.round(a.left) });
                 },
               },
               b
@@ -1271,51 +1206,28 @@ if ("undefined" == typeof jQuery)
             width: e.right - e.left,
             height: e.bottom - e.top,
           }));
-        var f = d
-            ? {
-                top: 0,
-                left: 0,
-              }
-            : b.offset(),
+        var f = d ? { top: 0, left: 0 } : b.offset(),
           g = {
             scroll: d
               ? document.documentElement.scrollTop || document.body.scrollTop
               : b.scrollTop(),
           },
           h = d
-            ? {
-                width: a(window).width(),
-                height: a(window).height(),
-              }
+            ? { width: a(window).width(), height: a(window).height() }
             : null;
         return a.extend({}, e, g, h, f);
       }),
       (c.prototype.getCalculatedOffset = function (a, b, c, d) {
         return "bottom" == a
-          ? {
-              top: b.top + b.height,
-              left: b.left + b.width / 2 - c / 2,
-            }
+          ? { top: b.top + b.height, left: b.left + b.width / 2 - c / 2 }
           : "top" == a
-          ? {
-              top: b.top - d,
-              left: b.left + b.width / 2 - c / 2,
-            }
+          ? { top: b.top - d, left: b.left + b.width / 2 - c / 2 }
           : "left" == a
-          ? {
-              top: b.top + b.height / 2 - d / 2,
-              left: b.left - c,
-            }
-          : {
-              top: b.top + b.height / 2 - d / 2,
-              left: b.left + b.width,
-            };
+          ? { top: b.top + b.height / 2 - d / 2, left: b.left - c }
+          : { top: b.top + b.height / 2 - d / 2, left: b.left + b.width };
       }),
       (c.prototype.getViewportAdjustedDelta = function (a, b, c, d) {
-        var e = {
-          top: 0,
-          left: 0,
-        };
+        var e = { top: 0, left: 0 };
         if (!this.$viewport) return e;
         var f = (this.options.viewport && this.options.viewport.padding) || 0,
           g = this.getPosition(this.$viewport);
@@ -1407,7 +1319,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b) {
       return this.each(function () {
         var d = a(this),
@@ -1478,7 +1389,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(c, d) {
       (this.$body = a(document.body)),
         (this.$scrollElement = a(a(c).is(document.body) ? window : c)),
@@ -1495,7 +1405,6 @@ if ("undefined" == typeof jQuery)
         this.refresh(),
         this.process();
     }
-
     function c(c) {
       return this.each(function () {
         var d = a(this),
@@ -1506,9 +1415,7 @@ if ("undefined" == typeof jQuery)
       });
     }
     (b.VERSION = "3.3.5"),
-      (b.DEFAULTS = {
-        offset: 10,
-      }),
+      (b.DEFAULTS = { offset: 10 }),
       (b.prototype.getScrollHeight = function () {
         return (
           this.$scrollElement[0].scrollHeight ||
@@ -1598,7 +1505,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b) {
       return this.each(function () {
         var d = a(this),
@@ -1622,12 +1528,8 @@ if ("undefined" == typeof jQuery)
           !b.parent("li").hasClass("active"))
         ) {
           var e = c.find(".active:last a"),
-            f = a.Event("hide.bs.tab", {
-              relatedTarget: b[0],
-            }),
-            g = a.Event("show.bs.tab", {
-              relatedTarget: e[0],
-            });
+            f = a.Event("hide.bs.tab", { relatedTarget: b[0] }),
+            g = a.Event("show.bs.tab", { relatedTarget: e[0] });
           if (
             (e.trigger(f),
             b.trigger(g),
@@ -1636,14 +1538,8 @@ if ("undefined" == typeof jQuery)
             var h = a(d);
             this.activate(b.closest("li"), c),
               this.activate(h, h.parent(), function () {
-                e.trigger({
-                  type: "hidden.bs.tab",
-                  relatedTarget: b[0],
-                }),
-                  b.trigger({
-                    type: "shown.bs.tab",
-                    relatedTarget: e[0],
-                  });
+                e.trigger({ type: "hidden.bs.tab", relatedTarget: b[0] }),
+                  b.trigger({ type: "shown.bs.tab", relatedTarget: e[0] });
               });
           }
         }
@@ -1698,7 +1594,6 @@ if ("undefined" == typeof jQuery)
   })(jQuery),
   +(function (a) {
     "use strict";
-
     function b(b) {
       return this.each(function () {
         var d = a(this),
@@ -1724,10 +1619,7 @@ if ("undefined" == typeof jQuery)
     };
     (c.VERSION = "3.3.5"),
       (c.RESET = "affix affix-top affix-bottom"),
-      (c.DEFAULTS = {
-        offset: 0,
-        target: window,
-      }),
+      (c.DEFAULTS = { offset: 0, target: window }),
       (c.prototype.getState = function (a, b, c, d) {
         var e = this.$target.scrollTop(),
           f = this.$element.offset(),
@@ -1783,10 +1675,7 @@ if ("undefined" == typeof jQuery)
                 .addClass(i)
                 .trigger(i.replace("affix", "affixed") + ".bs.affix");
           }
-          "bottom" == h &&
-            this.$element.offset({
-              top: g - b - f,
-            });
+          "bottom" == h && this.$element.offset({ top: g - b - f });
         }
       });
     var d = a.fn.affix;

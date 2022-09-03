@@ -5310,8 +5310,7 @@
       var r,
         i,
         o,
-        a = this,
-        s = e.indexOf(" ");
+        a = this;
       return (
         -1 < s && ((r = yt(e.slice(s))), (e = e.slice(0, s))),
         m(t)
